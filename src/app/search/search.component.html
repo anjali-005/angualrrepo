@@ -1,0 +1,52 @@
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-12 col-sm-12 col-xl-12">
+            <label for=""><strong>Enter CustomerID (AADHAR NO) : </strong></label>
+            <input type="text" name="id" placeholder="Enter customer id" class="form-control" [(ngModel)]="id">
+            <button type="button" class="btn btn-primary" (click)="findById()">Search</button>&nbsp;
+            </div>
+         <br><br>
+         <br><br>
+         <h2>Account Details of : {{account.name}}</h2>  
+            <div class="col-lg-12 col-sm-12 col-xs-12">
+                <table class="table table-stripped">
+                    <thead>
+                        <tr class="bg-info text-light" style="text-align: center;">
+                            <td>ID</td>
+                            <td>NAME</td>
+                            <td>EMAIL</td>
+                            <td>CITY</td>
+                            <td>STATE</td>
+                            <td>PIN_CODE</td>
+                            <td>ACCOUNT_TYPE</td>
+                            <td>BALANCE</td>
+                            <td>DOC</td>
+                            <td>STATUS</td>
+                            <td>EDIT </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr >
+                            <td>{{account.id}}</td>
+                            <td>{{account.name}}</td>
+                            <td>{{account.email}}</td>
+                            <td>{{account.city}}</td>
+                            <td>{{account.state}}</td>
+                            <td>{{account.pin_code}}</td>
+                            <td>{{account.account_type}}</td>
+                            <td>{{account.balance}}</td>
+                            <td>{{account.doc}}</td>
+                            <td>{{account.status}}</td>
+                            <td><button type="button" class="btn btn-success" [routerLink]="['edit',account.id]"> Update</button></td>
+                         </tr>
+                    </tbody>
+                </table>
+            </div>
+       
+
+            
+
+
+
+

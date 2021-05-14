@@ -1,0 +1,47 @@
+<br><br>
+<div class="row">
+    <div class="col-sm-8"></div>
+    <div col-sm-4>
+        <input type="text" name="search" placeholder="search...." [(ngModel)]=term>
+    </div>
+</div>
+
+
+
+
+<div class="container mt-5 " >
+    <div class="col-lg-12 col-sm-12 col-xs-12">
+        <table class="table table-stripped">
+            <thead>
+                <tr class="bg-info text-light" style="text-align: center;">
+                    <td>ID</td>
+                    <td>NAME</td>
+                    <td>EMAIL</td>
+                    <td>CITY</td>
+                    <td>STATE</td>
+                    <td>PIN_CODE</td>
+                    <td>ACCOUNT_TYPE</td>
+                    <td>BALANCE</td>
+                    <td>DOC</td>
+                    <td>STATUS</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor = "let a of accounts |filter:term | paginate: { itemsPerPage: 6, currentPage: p }">
+                    <td>{{a.id}}</td>
+                    <td>{{a.name}}</td>
+                    <td>{{a.email}}</td>
+                    <td>{{a.city}}</td>
+                    <td>{{a.state}}</td>
+                    <td>{{a.pin_code}}</td>
+                    <td>{{a.account_type}}</td>
+                    <td>{{a.balance}}</td>
+                    <td>{{a.doc}}</td>
+                    <td>{{a.status}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <pagination-controls (pageChange)="p = $event" style="float:right"></pagination-controls>
+        <button type="button" class="btn btn-danger" routerLink="hsbc">Back</button>
+    </div>
+</div>

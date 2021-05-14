@@ -1,0 +1,11 @@
+table
+{
+    align-items: center;
+    border: black solis 3px;
+    border-radius: 20px;
+}
+h2
+{
+    text-align: center;
+    color: darkblue;
+}
